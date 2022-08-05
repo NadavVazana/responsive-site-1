@@ -190,13 +190,15 @@ html {
     transition: left 0.5s;
     box-shadow: 0,0,0;
     border: solid var(--clr2) .5px;
-    box-shadow: -4px -1px 20px 0px #1e1e1e8c
+    
 
 }
 
 .menu-open{
     left:70%;
-    transition: left 0.5s;
+    transition: left 0.5s box-shadow 0.4s;
+    box-shadow: -4px -1px 20px 0px #1e1e1e8c;
+    
 }
 
 .main-nav-list li a{
