@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadav's Project</title>
+</head>
+<body class="main-layout flex-col">
+    
+    <div onclick="toggleMenu()" class="close-screen full"></div>
+    <header class="  main-header full main-layout flex-align-center">
+        <div class="header-flex flex space-between flex-align-center  ">
+            <div class="logo ">Blogin</div>
+            <div class="main-nav">
+                <ul class="main-nav-list  clean-list">
+                    <li><a href="#">Journal</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <button onclick="toggleMenu()" class="hamburger">☰</button>
+            </div></div>
+        </header>
+    <main class="main-content flex-col">
+        <section class="card ">
+            <img class="card-image" src="images/001.png" alt="">
+            <div class="text-container flex-col space-between flex-align-center">
+                <h2 class="card-title">Duis aute irure dolor in 
+                    henderit in voluptate.</h2>
+            <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
+                </p>
+                <button class="card-button">Continue Reading</button></div>
+   
+        </section>
+        <section class="card ">
+            <img class="card-image" src="images/002.png" alt="">
+            <div class="text-container flex-col ">
+                <h2 class="card-title">Duis aute irure dolor in 
+                    henderit in voluptate.</h2>
+            <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+            <button class="card-button">Continue Reading</button></div>
+        </section>
+        <section class="card ">
+            <img class="card-image" src="images/003.png" alt="">
+            <div class="text-container flex-col space-between flex-align-center">
+                <h2 class="card-title">Duis aute irure dolor in 
+                    henderit in voluptate.</h2>
+            <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur....</p>
+            <button class="card-button">Continue Reading</button></div>
+        </section>
+        <section class="page-move flex space-between">
+            <a href="#"class="page-pre">&larr; 	&nbsp; Previous</a>
+            <a href="#" class="page-next">Next 	&nbsp; &rarr;</a>
+        </section>
+    </main>
+    <footer class="main-footer flex-col flex-align-center  ">
+        <div class="logo-footer">Blogin</div>
+        <small class="rights">© 2014 Blogin.com  -  All Rights Reserved  -  Find more free Templates at Pixelhint.com</small>
+        <div class="social-links ">
+            <ul class="social-list flex clean-list">
+                <li class="facebook-item"><a class="facebook" href="#"> <img src="images/facebook.png" alt="facebook"></a></li>
+                <li class="twitter-item"><a class="twitter" href="#"><img src="images/twitter.png" alt="facebook"></a></li>
+                <li class="be-item"><a class="be" href="#"><img src="images/be.png" alt="facebook"></a></li>
+                <li class="myspace-item"><a class="myspace" href="#"><img src="images/myspace.png" alt="facebook"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(){
+            document.querySelector('.main-nav-list').classList.toggle('menu-open')
+            document.querySelector('.close-screen').classList.toggle('close-screen-open')
+        }
+    </script>
+</body>
+</html>
