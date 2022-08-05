@@ -11,8 +11,8 @@
 </head>
 
 <body class="main-layout flex-col">
-    
-    
+
+
     <div onclick="toggleModal()" class="close-modal-screen full"></div>
     <div onclick="toggleMenu()" class="close-screen full"></div>
     <div class="info-modal">
@@ -26,7 +26,7 @@
             <div class="logo ">Blogin</div>
             <div class="main-nav">
                 <ul class="main-nav-list  clean-list">
-                    <li onmouseleave="closeDropDown()" onmouseenter="openDropDown()" onclick="toggleSideDrop()"><a
+                    <li onmouseleave="toggleDropDown()" onmouseenter="toggleDropDown()" onclick="toggleSideDrop()"><a
                             href="#">Jounral</a>
                         <ul class="clean-list drop-down">
                             <li> October 2016</li>
@@ -113,27 +113,40 @@
     </footer>
 
     <script>
+        var closeScreen = document.querySelector('.close-screen').classList
+        var closeModal = document.querySelector('.close-modal-screen').classList
+        var navList = document.querySelector('.main-nav-list').classList
+        var modal = document.querySelector('.info-modal').classList
+        var elLis = Array.from(document.querySelectorAll('.main-nav-list li'))
+        var dropDown = document.querySelector('.drop-down').classList
+
         function toggleMenu() {
-            document.querySelector('.main-nav-list').classList.toggle('menu-open')
-            document.querySelector('.close-screen').classList.toggle('close-screen-open')
+            navList.toggle('menu-open')
+            closeScreen.toggle('close-screen-open')
+            if (!navList.contains('menu-open') && dropDown.contains('drop-side-toggle'))
+                dropDown.toggle('drop-side-toggle')
+
+
         }
 
         function toggleModal() {
-            document.querySelector('.info-modal').classList.toggle('open-modal')
-            document.querySelector('.close-modal-screen').classList.toggle('close-modal-screen-open')
+            modal.toggle('open-modal')
+            closeModal.toggle('close-modal-screen-open')
+            if (modal.contains('open-modal'))
+                elLis.forEach(li => li.style.position = 'static')
+            else
+                elLis.forEach(li => li.style.position = 'relative')
 
         }
-        function openDropDown() {
-            document.querySelector('.drop-down').classList.add('drop-down-open')
+        function toggleDropDown() {
+            dropDown.toggle('drop-down-open')
         }
 
-        function closeDropDown() {
-            document.querySelector('.drop-down').classList.remove('drop-down-open')
-
-        }
 
         function toggleSideDrop() {
-            document.querySelector('.drop-down').classList.toggle('drop-side-toggle')
+            if (closeScreen.contains('close-screen-open'))
+                dropDown.toggle('drop-side-toggle')
+
         }
 
     </script>
