@@ -8,6 +8,10 @@
     --wide: 980px;
     --mid: 850px;
     --small-min: 750px
+
+
+
+
 }
 
 /* fonts */
@@ -34,6 +38,24 @@
     transition: opacity 0.3s;
     pointer-events:none;
     
+}
+.close-modal-screen{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    
+    cursor: pointer;
+    transition: opacity 0.3s;
+    pointer-events:none;
+    
+}
+.close-modal-screen-open{
+    pointer-events: all;
+   
+    opacity: 0.5;
+    transition: opacity 0.3s;
 }
 .close-screen-open{
     pointer-events: all;
@@ -141,6 +163,8 @@ html {
     font-family: euro;
     direction: ltr;
     font-size: 2.5rem;
+    cursor: pointer;
+    user-select: none;
 
 }
 
@@ -206,10 +230,12 @@ html {
     text-decoration: none;
     color: var(--clr2);
     font-size: 1.5rem;
+    font-family: lato;
     
     
    
 }
+
 
 .main-nav-list li{
     padding-top: 20px;
@@ -218,6 +244,7 @@ html {
     font-family: euro;
     font-weight: bold;
     text-align: center;
+    position: relative;
 }
 .main-nav-list li:hover{
     background-color:#e1e0e0;
@@ -230,7 +257,35 @@ html {
 
 
 }
+.drop-down{
+    background-color: var(--clr4);
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 100%;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    background-color: #1e1e1e;
+    transition: opacity 0.3s;
+    
+    
+}
 
+.drop-side-toggle{
+    opacity: 0.8;
+    pointer-events: all;
+    transition: opacity 0.3s;
+}
+
+.drop-down li{
+    margin-inline-end: 30px;
+    color: var(--clr4);
+    font-size: 1.5rem;
+    padding: 5px;
+    
+    
+}
 
 .logo-footer {
     color: var(--clr2);
@@ -238,6 +293,8 @@ html {
     padding-top: 80px;
     padding-bottom: 30px;
     direction: ltr;
+    font-family: euro;
+    font-weight: bold;
 
 }
 
@@ -252,17 +309,32 @@ html {
     padding-bottom: 38px;
     direction: ltr;
 }
-
+.pixel-hint{
+    text-decoration: none;
+    color: var(--clr2);
+    font-weight: bold;
+}
+.pixel-hint:hover{
+    color: #516fad;
+}
 
 .social-list li {
     background-color: #e5e5e5;
     padding: 13px 16px;
     margin-inline-end: 20px;
+    cursor: pointer;
 }
 
+
+.facebook{
+    padding-right: 4px;
+
+}
 .facebook-item:hover {
     background-color: #516fad;
-    ;
+    text-align: center;
+    
+    
 }
 
 .twitter-item:hover {
@@ -291,10 +363,69 @@ html {
 }
 
 .text-container {
+
     margin-inline-start: 45px;
-    margin-inline-end: 45px;
+    margin-inline-end: 10px;
     /* padding-top: 30px; */
 
+}
+.card-text{
+    line-height: 26px;
+    margin-top: 50px;
+}
+
+.info-modal{
+    display: flex;
+    flex-direction: column;
+    color: var(--clr2);
+    background-color: #1DA1F2;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+    padding: 80px;
+    opacity: 0;
+    pointer-events: none;
+
+   
+    background-color: var(--clr4);
+}
+.select-container{
+
+}
+.open-modal{
+    pointer-events: all;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.select-drop{
+    width: 100%;
+    height: 100%;
+}
+
+.info-modal > *{
+    margin: 20px;
+    font-family: lato;
+}
+.info-modal span{
+    margin-bottom: 0;
+    font-family: euro;
+    font-weight: bold;
+    font-size: 1.4rem;
+   
+}
+.info-modal button{
+    border: solid black 0.3px;
+    padding: 20px;
+    font-family: lato;
+    font-weight: bold;
+    background-color: var(--clr4);
+}
+.info-modal button:hover{
+    background-color:  lightcoral;
+    transition: 0.5s;
 }
 
 
@@ -309,6 +440,7 @@ html {
     width: 186px;
     align-self: center;
     margin-top: 30px;
+    cursor: pointer;
 
 
 
@@ -345,6 +477,29 @@ html {
     .header-flex {
         padding: 0;
     }
+    .drop-down{
+        flex-direction: column;
+        background-color: var(--clr1);
+        position: absolute;
+        width: 100%;
+        right: 0;
+        top: 100%;
+        opacity: 0;
+        pointer-events: none;
+        box-shadow: -1px 10px 12px 2px #1e1e1e5e
+        
+        
+        
+        
+    }
+    .drop-down-open{
+        opacity: 0.9;
+        pointer-events: all;
+        transition: opacity 0.6s;
+    }
+    .drop-down li{
+        margin: 10px;
+    }
 
     .hamburger {
         display: none;
@@ -368,7 +523,7 @@ html {
         
     }
 
-    .main-nav-list li:last-child {
+    .main-nav-list > li:last-child {
         border-right: solid #1e1e1e 2px;
     }
 

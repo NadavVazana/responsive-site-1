@@ -9,14 +9,22 @@
     <title>Nadav's Project</title>
 </head>
 <body class="main-layout flex-col">
+  
     
     <div onclick="toggleMenu()" class="close-screen full"></div>
+    <div onclick="toggleModal()" class="close-modal-screen full"></div>
+    <div class="info-modal">
+        <h2>Join us to get access to the latest stories!</h2>
+        <span>Email:</span><input type="email">
+        <button>Submit</button>
+        <button onclick="toggleModal()">Close</button>
+    </div>
     <header class="  main-header full main-layout flex-align-center">
         <div class="header-flex flex space-between flex-align-center  ">
             <div class="logo ">Blogin</div>
             <div class="main-nav">
                 <ul class="main-nav-list  clean-list">
-                    <li><a href="#">Journal</a></li>
+                    <li onmouseleave="closeDropDown()" onmouseenter="openDropDown()" onclick="toggleSideDrop()" ><a href="#">Jounral</a><ul class="clean-list drop-down"><li> October 2016</li><li>January 2017</li><li>April 2017</li><li>July 2017</li></ul></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Work</a></li>
                     <li><a href="#">Contact</a></li>
@@ -24,53 +32,55 @@
                 <button onclick="toggleMenu()" class="hamburger">☰</button>
             </div></div>
         </header>
-    <main class="main-content flex-col">
-        <section class="card ">
+        <main class="main-content flex-col">
+           
+            <section class="card ">
             <img class="card-image" src="images/001.png" alt="">
             <div class="text-container flex-col space-between flex-align-center">
                 <h2 class="card-title">Duis aute irure dolor in 
                     henderit in voluptate.</h2>
             <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-
+                <br>br
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...
                 </p>
-                <button class="card-button">Continue Reading</button></div>
+                <button  onclick="toggleModal()" class="card-button">Continue Reading</button></div>
    
         </section>
         <section class="card ">
             <img class="card-image" src="images/002.png" alt="">
-            <div class="text-container flex-col ">
+            <div class="text-container space-between flex-col ">
                 <h2 class="card-title">Duis aute irure dolor in 
                     henderit in voluptate.</h2>
             <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-
+                <br><br>
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-            <button class="card-button">Continue Reading</button></div>
+            <button  onclick="toggleModal()" class="card-button">Continue Reading</button></div>
         </section>
         <section class="card ">
             <img class="card-image" src="images/003.png" alt="">
             <div class="text-container flex-col space-between flex-align-center">
                 <h2 class="card-title">Duis aute irure dolor in 
                     henderit in voluptate.</h2>
+                    
             <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-
+                <br><br>
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur....</p>
-            <button class="card-button">Continue Reading</button></div>
+            <button onclick="toggleModal()" class="card-button">Continue Reading</button></div></div>
         </section>
         <section class="page-move flex space-between">
-            <a href="#"class="page-pre">&larr; 	&nbsp; Previous</a>
-            <a href="#" class="page-next">Next 	&nbsp; &rarr;</a>
+            <a href="#a"class="page-pre">&larr; 	&nbsp; Previous</a>
+            <a href="#a" class="page-next">Next 	&nbsp; &rarr;</a>
         </section>
     </main>
     <footer class="main-footer flex-col flex-align-center  ">
         <div class="logo-footer">Blogin</div>
-        <small class="rights">© 2014 Blogin.com  -  All Rights Reserved  -  Find more free Templates at Pixelhint.com</small>
+        <small class="rights">© 2014 Blogin.com  -  All Rights Reserved  -  Find more free Templates at <a class="pixel-hint" target="_blank" href="http://Pixelhint.com"> Pixelhint.com</small></a>
         <div class="social-links ">
             <ul class="social-list flex clean-list">
-                <li class="facebook-item"><a class="facebook" href="#"> <img src="images/facebook.png" alt="facebook"></a></li>
-                <li class="twitter-item"><a class="twitter" href="#"><img src="images/twitter.png" alt="facebook"></a></li>
-                <li class="be-item"><a class="be" href="#"><img src="images/be.png" alt="facebook"></a></li>
-                <li class="myspace-item"><a class="myspace" href="#"><img src="images/myspace.png" alt="facebook"></a></li>
+                <li class="facebook-item"><a class="facebook" href="#a"> <img src="images/facebook.png" alt="facebook"></a></li>
+                <li class="twitter-item"><a class="twitter" href="#a"><img src="images/twitter.png" alt="facebook"></a></li>
+                <li class="be-item"><a class="be" href="#a"><img src="images/be.png" alt="facebook"></a></li>
+                <li class="myspace-item"><a class="myspace" href="#a"><img src="images/myspace.png" alt="facebook"></a></li>
             </ul>
         </div>
     </footer>
@@ -80,6 +90,25 @@
             document.querySelector('.main-nav-list').classList.toggle('menu-open')
             document.querySelector('.close-screen').classList.toggle('close-screen-open')
         }
+
+        function toggleModal(){
+            document.querySelector('.info-modal').classList.toggle('open-modal')
+            document.querySelector('.close-modal-screen').classList.toggle('close-modal-screen-open')
+            
+        }
+        function openDropDown(){
+            document.querySelector('.drop-down').classList.add('drop-down-open')
+        }
+
+        function closeDropDown(){
+            document.querySelector('.drop-down').classList.remove('drop-down-open')
+
+        }
+
+        function toggleSideDrop(){
+            document.querySelector('.drop-down').classList.toggle('drop-side-toggle')
+        }
+
     </script>
 </body>
 </html>
