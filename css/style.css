@@ -1,4 +1,5 @@
 /* vars */
+
 :root {
     --clr1: #606060;
     --clr2: #292929;
@@ -16,6 +17,7 @@
 
 
 /* fonts */
+
 @font-face {
     font-family: lato;
     src: url(../fonts/lato/Lato-Regular.ttf);
@@ -32,9 +34,11 @@
 
 
 /* base */
+
 .pos-static{
     position: static;
 }
+
 ::selection {
     background-color: var(--clr4);
 }
@@ -91,6 +95,7 @@ html {
 
 
 .info-modal {
+    box-shadow: -1px -3px 17px 10px #3d383878;
     display: flex;
     flex-direction: column;
     color: var(--clr2);
@@ -103,7 +108,7 @@ html {
     padding: 80px;
     opacity: 0;
     pointer-events: none;
-
+    transition: opacity 0.2s;
 
     background-color: var(--clr4);
 }
@@ -115,6 +120,7 @@ html {
     opacity: 1;
     transition: opacity 0.5s;
 }
+
 
 .close-screen {
     position: fixed;
@@ -164,6 +170,7 @@ html {
 
 
 /* page buttons */
+
 .page-move .page-next,
 .page-pre {
     text-transform: uppercase;
@@ -198,6 +205,7 @@ html {
 
 
 /* layout */
+
 .main-layout>*:not(.full) {
     max-width: 800px;
     margin-left: auto;
@@ -212,6 +220,7 @@ html {
 
 
 /* flex helpers */
+
 .flex {
     display: flex
 }
@@ -237,9 +246,11 @@ html {
 
 
 /* header */
+header{
+    direction: ltr;
+}
 .logo {
     font-family: euro;
-    direction: ltr;
     font-size: 2.5rem;
     cursor: pointer;
     user-select: none;
@@ -311,7 +322,6 @@ html {
     
 }
 
-
 .main-nav-list li {
     padding-top: 20px;
     padding-bottom: 50px;
@@ -326,14 +336,12 @@ html {
     background-color: #e1e0e0;
 }
 
-
 .main-footer {
     background-color: #ffffff;
     flex-basis: 315px;
 
 
 }
-
 
 
 .drop-down {
@@ -347,23 +355,38 @@ html {
     top: 0;
     background-color: #1e1e1e;
     transition: opacity 0.3s;
+    transform:scaleX(0%);
+    transition: all 0.3s;
 
+    
+    
+}
 
+.drop-side-toggle li:hover{
+    background-color: var(--clr4);
+    color: var(--clr2)
 }
 
 .drop-side-toggle {
     opacity: 0.8;
     pointer-events: all;
-    transition: opacity 0.3s;
+    transition: all 0.3s;
+    transform: scaleX(100%);
 }
 
 .drop-down li {
-    margin-inline-end: 30px;
+    
+    
     color: var(--clr4);
     font-size: 1.5rem;
     padding: 5px;
+    padding-inline-end: 20px;
 
 
+}
+
+.drop-down li:hover{
+    color: var(--clr1);
 }
 
 
@@ -372,7 +395,6 @@ html {
 
 
 /* list helpers */
-
 
 .clean-list {
     margin: 0;
@@ -385,8 +407,6 @@ html {
 
 
 /* page body */
-
-
 
 .main-content {
     padding-top: 80px;
@@ -440,6 +460,10 @@ html {
     padding: 13px 16px;
     margin-inline-end: 20px;
     cursor: pointer;
+}
+.facebook img{
+    position: relative;
+    left: 4px;
 }
 
 
@@ -522,9 +546,6 @@ html {
 
 }
 
-
-
-
 .card .card-button:hover:after {
     content: "→";
 
@@ -562,14 +583,17 @@ html {
         right: 0;
         top: 100%;
         opacity: 0;
+        transition: all 0.5s;
         pointer-events: none;
-        box-shadow: -1px 10px 12px 2px #1e1e1e5e
+        box-shadow: -1px 10px 12px 2px #1e1e1e5e;
+        transform:scaleY(0%)
     }
 
     .drop-down-open {
         opacity: 0.9;
         pointer-events: all;
-        transition: opacity 0.6s;
+        transition: all 0.6s;
+        transform:scaleY(100%)
     }
 
     .drop-down li {
@@ -615,13 +639,13 @@ html {
 
     }
 
-    .main-nav-list li a:hover {
+     .main-nav-list li a:hover {
 
         box-shadow: inset 0 -6px 0 var(--clr3);
         color: var(--clr3);
 
 
-    }
+    } 
    
 
     .main-nav-list li {
@@ -648,7 +672,8 @@ html {
 
     .card {
         display: flex;
-        max-height: 400px;
+        
+        
     }
 
     .card .card-button {
