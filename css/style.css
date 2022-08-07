@@ -371,6 +371,7 @@ header{
     opacity: 0.8;
     pointer-events: all;
     transition: all 0.3s;
+    transform-origin: left;
     transform: scaleX(100%);
 }
 
@@ -584,6 +585,7 @@ header{
         top: 100%;
         opacity: 0;
         transition: all 0.5s;
+        transform-origin: top;
         pointer-events: none;
         box-shadow: -1px 10px 12px 2px #1e1e1e5e;
         transform:scaleY(0%)
@@ -677,7 +679,7 @@ header{
     }
 
     .card .card-button {
-        align-self: center;
+        align-self: flex-start;
     }
 
 
