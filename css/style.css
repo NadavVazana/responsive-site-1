@@ -361,6 +361,9 @@ header{
     
     
 }
+.drop-down li:hover{
+    color: var(--clr1);
+}
 
 .drop-side-toggle li:hover{
     background-color: var(--clr4);
@@ -386,9 +389,6 @@ header{
 
 }
 
-.drop-down li:hover{
-    color: var(--clr1);
-}
 
 
 
@@ -506,7 +506,7 @@ header{
 }
 
 .text-container {
-
+    margin-top: 30px;
     margin-inline-start: 45px;
     margin-inline-end: 10px;
 
@@ -527,13 +527,14 @@ header{
     border: 2px solid #c2c2c2;
     background-color: #ffffff;
     border-radius: 20px;
-    padding: 13px;
+    padding: 1rem 1.2rem;
     color: #c2c1c1;
     font-weight: 700;
-    width: 186px;
     align-self: center;
     margin-top: 30px;
     cursor: pointer;
+    transition: all .3s;
+    
 
 
 
@@ -542,6 +543,9 @@ header{
 .card .card-button:hover {
     border: 2px solid var(--clr3);
     color: var(--clr3);
+    padding-inline-end: 1.8rem;
+    transition: all .3s;
+    
 
 
 
@@ -549,6 +553,8 @@ header{
 
 .card .card-button:hover:after {
     content: "→";
+    position: absolute;
+    
 
 }
 
@@ -667,9 +673,16 @@ header{
 
 /* mid */
 @media (min-width: 900px) {
+    html{
+        font-size: 14px;
+    }
     .main-layout>*:not(.full) {
         max-width: var(--mid);
 
+    }
+    img{
+        object-fit: cover;
+        object-position: top;
     }
 
     .card {
@@ -682,6 +695,9 @@ header{
         align-self: flex-start;
     }
 
+    .text-container{
+        margin-top: 0
+    }
 
 
 
